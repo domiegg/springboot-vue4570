@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.LaogongDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.LaogongEntity" id="laogongMap">
+        <result property="laogongxingming" column="laogongxingming"/>
+        <result property="xingbie" column="xingbie"/>
+        <result property="nianling" column="nianling"/>
+        <result property="tupian" column="tupian"/>
+        <result property="gongzuonianling" column="gongzuonianling"/>
+        <result property="zhuanzhang" column="zhuanzhang"/>
+        <result property="laogongjieshao" column="laogongjieshao"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.LaogongVO" >
+		SELECT * FROM laogong  laogong         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.LaogongVO" >
+		SELECT  laogong.* FROM laogong  laogong 	
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.LaogongView" >
+
+		SELECT  laogong.* FROM laogong  laogong 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.LaogongView" >
+		SELECT * FROM laogong  laogong <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+
+</mapper>

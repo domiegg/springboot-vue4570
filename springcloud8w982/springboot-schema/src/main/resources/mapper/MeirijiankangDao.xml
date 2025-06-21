@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.MeirijiankangDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.MeirijiankangEntity" id="meirijiankangMap">
+        <result property="laorenzhanghao" column="laorenzhanghao"/>
+        <result property="laorenxingming" column="laorenxingming"/>
+        <result property="xingbie" column="xingbie"/>
+        <result property="nianling" column="nianling"/>
+        <result property="tiwen" column="tiwen"/>
+        <result property="xueya" column="xueya"/>
+        <result property="xintiao" column="xintiao"/>
+        <result property="jiankangbaogao" column="jiankangbaogao"/>
+        <result property="jianyi" column="jianyi"/>
+        <result property="tianjiashijian" column="tianjiashijian"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.MeirijiankangVO" >
+		SELECT * FROM meirijiankang  meirijiankang         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.MeirijiankangVO" >
+		SELECT  meirijiankang.* FROM meirijiankang  meirijiankang 	
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.MeirijiankangView" >
+
+		SELECT  meirijiankang.* FROM meirijiankang  meirijiankang 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.MeirijiankangView" >
+		SELECT * FROM meirijiankang  meirijiankang <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+
+</mapper>
